@@ -1,12 +1,35 @@
-I need six api end points which full fledge frontend and backend using csv file as data base
+![image](https://github.com/user-attachments/assets/7a542711-0571-4fef-8dd1-ed7c00a98e7b)
+![image](https://github.com/user-attachments/assets/5e67e91e-fee2-4e0e-b338-8136cd3c4301)
+**Validation**:
+- Ensure the email format is valid (e.g., xxxxx@vnrvjiet.in).
 
-1)get: this api end point should respond with about page of your vnr
-/vnr_about
+**Storage**:
+- Store the submitted details in a CSV file named `vnr_students.csv`.
 
-2)post: need a api end point which takes name roll no section branch in the form and a check box and email address ,email should check validation as   once we click on submit it should store in csv file nameit
-/vnr_students.csv
+## 3. To-Do List Application Endpoints
 
-3 and 4 routes when i click on create it should take task name deadline and priority 
+### 3.1 Create To-Do
+
+- **Endpoint**: `POST /todo_create`
+- **Description**: This endpoint allows users to create a new to-do item.
+- **Request Body**:
+  ```json
+  {
+    "task": "string",
+    "status": "boolean" // e.g., true for completed, false for pending
+  }
 
 
-4 and 5
+  ![image](https://github.com/user-attachments/assets/f845651b-8344-4486-9463-28821b122bac)
+
+![image](https://github.com/user-attachments/assets/6bcc3118-f979-4a86-b36a-7c78e614eb7e)
+{
+  "task": "string",
+  "status": "boolean"
+}
+
+![image](https://github.com/user-attachments/assets/18177760-9bf0-4df8-b6db-99ce6c278caa)
+
+![image](https://github.com/user-attachments/assets/bf9ebd4e-5ab7-4178-8dec-f8d1316d5750)
+
+
