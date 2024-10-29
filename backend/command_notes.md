@@ -27,6 +27,13 @@ Steps to open VS code from file explorer
 .gitignore ( This is for ignoring files you don't need to push to GitHub )
 
 
+![WhatsApp Image 2024-10-29 at 19 54 24_23508e8f](https://github.com/user-attachments/assets/91873ce0-ab5e-42ca-a621-e59b968189de)
+
+![WhatsApp Image 2024-10-29 at 20 20 41_6cfd118a](https://github.com/user-attachments/assets/34f27c6b-b723-4c5a-b3cb-4f5ce2b31cd1)
+
+
+
+
 
 
 
