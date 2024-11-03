@@ -1,39 +1,172 @@
+# VNR Student Registration and Todo System
 
-Submission Deadline : 31st 11:59pm
+A Flask-based REST API system that handles student registration for VNR VJIET and includes a todo list management system.
 
+## Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [API Documentation](#api-documentation)
+  - [Student Registration](#student-registration)
+  - [Todo List Management](#todo-list-management)
+- [Data Storage](#data-storage)
+- [Validation Rules](#validation-rules)
 
-![image](https://github.com/user-attachments/assets/7a542711-0571-4fef-8dd1-ed7c00a98e7b)
-![image](https://github.com/user-attachments/assets/5e67e91e-fee2-4e0e-b338-8136cd3c4301)
-**Validation**:
-- Ensure the email format is valid (e.g., xxxxx@vnrvjiet.in).
+## Features
 
-**Storage**:
-- Store the submitted details in a CSV file named `vnr_students.csv`.
+- Student registration with email validation
+- Todo list creation and management
+- Data persistence using CSV and JSON
+- Input validation and error handling
+- RESTful API endpoints
 
-## 3. To-Do List Application Endpoints
+## Prerequisites
 
-### 3.1 Create To-Do
+- Python 3.7+
+- Flask
+- CSV and JSON support
 
-- **Endpoint**: `POST /todo_create`
-- **Description**: This endpoint allows users to create a new to-do item.
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/vnr-registration-system.git
+cd vnr-registration-system
+```
+
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install flask
+```
+
+4. Run the application:
+```bash
+python app.py
+```
+
+## API Documentation
+
+### Student Registration
+
+#### Register a New Student
+- **Endpoint**: `POST /register`
+- **Content-Type**: `application/json`
 - **Request Body**:
-  ```json
-  {
-    "task": "string",
-    "status": "boolean" // e.g., true for completed, false for pending
-  }
-
-
-  ![image](https://github.com/user-attachments/assets/f845651b-8344-4486-9463-28821b122bac)
-
-![image](https://github.com/user-attachments/assets/6bcc3118-f979-4a86-b36a-7c78e614eb7e)
+```json
 {
-  "task": "string",
-  "status": "boolean"
+    "name": "John Doe",
+    "email": "john@vnrvjiet.in",
+    "phone": "1234567890",
+    "year": 2
 }
+```
+- **Response (Success)**:
+```json
+{
+    "message": "Student registered successfully",
+    "status": "success"
+}
+```
+- **Response (Error)**:
+```json
+{
+    "error": "Invalid email format. Must be xxxxx@vnrvjiet.in"
+}
+```
 
-![image](https://github.com/user-attachments/assets/18177760-9bf0-4df8-b6db-99ce6c278caa)
+### Todo List Management
 
-![image](https://github.com/user-attachments/assets/bf9ebd4e-5ab7-4178-8dec-f8d1316d5750)
+#### Create Todo
+- **Endpoint**: `POST /todo_create`
+- **Content-Type**: `application/json`
+- **Request Body**:
+```json
+{
+    "task": "Complete assignment",
+    "status": false
+}
+```
+- **Response (Success)**:
+```json
+{
+    "message": "Todo created successfully",
+    "todo_id": 1
+}
+```
 
+#### Get All Todos
+- **Endpoint**: `GET /todos`
+- **Response**:
+```json
+{
+    "todos": [
+        {
+            "id": 1,
+            "task": "Complete assignment",
+            "status": false
+        }
+    ]
+}
+```
+
+#### Update Todo
+- **Endpoint**: `PUT /todo_update/<todo_id>`
+- **Content-Type**: `application/json`
+- **Request Body**:
+```json
+{
+    "task": "Updated task",
+    "status": true
+}
+```
+
+#### Delete Todo
+- **Endpoint**: `DELETE /todo_delete/<todo_id>`
+
+## Data Storage
+
+### Student Data (vnr_students.csv)
+- Student information is stored in CSV format
+- Fields: name, email, phone, year, registration_date
+
+### Todo Data (todos.json)
+- Todo items are stored in JSON format
+- Each todo has: id, task, status
+
+## Validation Rules
+
+### Student Registration
+- Email must be in format: xxxxx@vnrvjiet.in
+- Phone number must be 10 digits
+- Year must be between 1 and 4
+
+### Todo Items
+- Task description cannot be empty
+- Status must be boolean (true/false)
+
+## Important Notes
+
+1. **Submission Deadline**: March 31st, 11:59 PM
+2. **Data Persistence**: All data is stored locally in CSV and JSON files
+3. **Error Handling**: The API returns appropriate error messages with corresponding HTTP status codes
+
+## Error Codes
+
+- 400: Bad Request (Invalid input)
+- 404: Not Found
+- 500: Internal Server Error
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
