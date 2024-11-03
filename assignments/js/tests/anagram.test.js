@@ -13,7 +13,7 @@ describe('isAnagram', () => {
 	test('returns false for non-anagrams', () => {
 		expect(isAnagram('hello', 'world')).toBe(false);
 		expect(isAnagram('openai', 'open')).toBe(false);
-		expect(isAnagram('hello', 'lhel')).toBe(false);
+	expect(isAnagram('hello', 'lhel')).toBe(false);
 		expect(isAnagram('working', 'non')).toBe(false);
 	});
 
