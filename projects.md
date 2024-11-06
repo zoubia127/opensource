@@ -679,7 +679,7 @@ Develop a full-stack web application that serves as a hub for inclusive campus c
 - **Inclusive Career Development:** Integrate the platform with the university's career services to offer specialized resources, networking opportunities, and job/internship placements for underrepresented students.
 - **Multilingual and Accessible Design:** Ensure the platform is designed with accessibility and linguistic diversity in mind, accommodating users with various abilities and cultural backgrounds.
 
-Here are 4 more full-stack project ideas for college students:
+
 
 ## 19. Campus Financial Literacy Hub
 
